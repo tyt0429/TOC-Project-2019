@@ -52,8 +52,8 @@ The initial state is set to `user`.
 Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
 
 * user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
+	* Input: "查詢演出場次"
+		* Reply: "您想要查詢哪一個月份的場次?(一月/二月/三月)"
 
 	* Input: "go to state2"
 		* Reply: "I'm entering state2"
