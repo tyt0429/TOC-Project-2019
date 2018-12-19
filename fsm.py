@@ -1,6 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message, send_image_url
+from utils import send_text_message, send_image_url, send_button_message
 
 
 class TocMachine(GraphMachine):
@@ -121,6 +121,7 @@ class TocMachine(GraphMachine):
         sender_id = event['sender']['id']
         send_image_url(sender_id, "https://ppt.cc/f3Rusx@.jpg")
         send_text_message(sender_id, "您想查詢什麼位置的票價?(黃區/紅區/藍區)")
+        
         
         		
     def on_exit_state_ticket_prcie(self, event):
@@ -245,6 +246,7 @@ class TocMachine(GraphMachine):
         sender_id = event['sender']['id']
         send_image_url(sender_id ,"https://ppt.cc/f0a3Xx")
         send_text_message(sender_id, "工作人員名單如下\n------藝術組------\n導演：湯雅瑭\n編劇：吳念真\n演員：陳怡亘 吳念真 郭予凡\n陳宜青 張瑋庭 徐子歡\n\n------技術組------\n舞台監督：黃臆璇\n舞台設計：馬佳琳\n舞台組員：蔡欣芸 張碩真 藍詩雅 林欣融\n燈光設計：李沛思\n音效設計：王凱莉\n服化妝設計：黃子菁\n服化妝組員：吳念真 吳沛潔\n\n------行政組------\n行政組長：曾恩瑜\n宣傳：馬佳琳 何竹昀 張碩真\n公關：黃沛瑀 藍詩雅\n前台：秦仕真 吳欣凌 蔡欣芸 林欣融 黃珮慈")
+        send_button_message(sender_id, "我們還有其他相關演出，請參閱")
         self.go_back()
 
     def on_exit_state_crew_list(self):
